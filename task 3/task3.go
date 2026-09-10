@@ -2,30 +2,23 @@ package main
 
 import "fmt"
 
-func isSimpleCheck(n int) bool {
+func task3() {
+	
+	number := 600851475143
+	divisor := 2
 
-	for i := 2; i < n; i++ {
-		if n % i == 0 {
-			return true
+	for divisor*divisor <= number {
+		if number%divisor == 0 {
+			number /= divisor
+		} else {
+			divisor++
 		}
 	}
 
-	return false
-
-}
-
-func task3(n int) (div int) {
-
-	for i := 2; i < n; i++ {
-		if n % i == 0 && !isSimpleCheck(i) && div < i {
-			div = i
-		}
-	}
-
-	return div
+	fmt.Println(number)
 
 }
 
 func main() {
-	fmt.Println(task3(13195))
+	fmt.Println(task3)
 }
